@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<style>
+    td {
+        height: 45px;
+        width: 45px;
+    }
+    tr,td {
+        text-align: center;
+    }
+    button {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<body>
+<table style="border: 1px solid" cellspacing="0">
+    <tr>
+        <td id="screen" colspan="4"></td>
+
+    </tr>
+    <tr>
+        <td style="border-top: 1px solid"><button onclick="clickBtn('(')">(</button></td>
+        <td style="border-top: 1px solid"><button onclick="clickBtn(')')">)</button></td>
+        <td style="border-top: 1px solid"><button onclick="clickBtn('%')">%</button></td>
+        <td style="border-top: 1px solid"><button onclick="clearScreen('AC')">AC</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clickBtn('7')">7</button></td>
+        <td><button onclick="clickBtn('8')">8</button></td>
+        <td><button onclick="clickBtn('9')">9</button></td>
+        <td><button onclick="clickBtn('/')">/</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clickBtn('4')">4</button></td>
+        <td><button onclick="clickBtn('5')">5</button></td>
+        <td><button onclick="clickBtn('6')">6</button></td>
+        <td><button onclick="clickBtn('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clickBtn('1')">1</button></td>
+        <td><button onclick="clickBtn('2')">2</button></td>
+        <td><button onclick="clickBtn('3')">3</button></td>
+        <td><button onclick="clickBtn('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clickBtn('0')">0</button></td>
+        <td><button onclick="clickBtn('.')">.</button></td>
+        <td><button onclick="cal('=')">=</button></td>
+        <td><button onclick="clickBtn('+')">+</button></td>
+    </tr>
+</table>
+<script>
+    let screen = document.getElementById('screen');
+    function clickBtn(value) {
+        screen.innerHTML += value;
+    }
+    function cal() {
+        let cal = screen.innerHTML;
+        let result = eval(cal);
+        screen.innerHTML = result;
+    }
+    function clearScreen() {
+        screen.innerHTML = "0";
+    }
+</script>
+</body>
+</html>
